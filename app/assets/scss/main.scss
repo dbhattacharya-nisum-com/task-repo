@@ -16,7 +16,13 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     float: right;
 }
 
-
+/* For temp purpose only */
+.error {
+    border: 1px solid #ff0000;
+}
+.main-wrapper h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    font-family: 'Open Sans', sans-serif;
+}
 /* Partials for  */
 @import "login";
 @import "header";

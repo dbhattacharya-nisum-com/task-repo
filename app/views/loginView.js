@@ -14,23 +14,20 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView', 'views/n
         	var navBarView = new NavbarView();
         	navBarView.$el.hide();
         	var sidePanelView = new SidePanelView();
-        	sidePanelView.$el.hide();
+            sidePanelView.$el.hide();
+            $(".content-area").addClass("login");
         },
         events:{
             'click #login-btn':'onLoginAttempt'
         },
         onLoginAttempt:function(event){
 //            var self=this;
-            if (event) event.preventDefault();
-            console.log(this.$('#inputEmail').val());
-            console.log(this.$('#inputPassword').val());
+            if (event) event.preventDefault();            
             backbone.history.navigate('home',true);
-           /* var navbarView = new NavbarView();
-            var headerRegion = navbarView.getRegion('headerRegion');
-            headerRegion.show(new NavbarView());*/
             var homeView = new HomeView();
 //            homeView.dispNavAndSP();
             homeView.generateTable();
+            $(".content-area").removeClass("login");
         }
     });
 
