@@ -22,15 +22,11 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView', 'views/n
         onLoginAttempt:function(event){
 //            var self=this;
             if (event) event.preventDefault();
-            console.log(this.$('#inputEmail').val());
-            console.log(this.$('#inputPassword').val());
+           
             backbone.history.navigate('home',true);
-           /* var navbarView = new NavbarView();
-            var headerRegion = navbarView.getRegion('headerRegion');
-            headerRegion.show(new NavbarView());*/
+         
             var homeView = new HomeView();
-//            homeView.dispNavAndSP();
-            homeView.generateTable();
+
         }
     });
 
