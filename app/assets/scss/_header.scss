@@ -20,7 +20,7 @@ header {
     nav {
         background: #01b4e6;
         color: #fff;
-        flex: 1;
+        // flex: 1;
         align-items: center;
         justify-content: center;
         height: 50px;
@@ -59,4 +59,12 @@ header {
               color: #000000;
           }
       }
+    .module-title {        
+        background: #01b4e6;
+        flex: 1;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 10px 0 0 0;
+        text-align: center;
+    }
 }
