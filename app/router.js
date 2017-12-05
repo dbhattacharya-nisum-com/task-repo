@@ -8,19 +8,18 @@ var Router = Marionette.AppRouter.extend({
         'addEmp': 'addEmpRoute'
     },
     loginRoute:function(){
-    	var navbarView = new NavbarView();
-        navbarView.$el.hide();
+//    	var navbarView = new NavbarView();
+//        navbarView.$el.hide();
         var loginView = new LoginView(); 
     },
     homeRoute: function () {
         var homeView = new HomeView();
+//        homeView.dispNavAndSP();
         homeView.generateTable(); 
-        var navbarView = new NavbarView();
-        navbarView.$el.show();
-        var sidePanelView=new SidePanelView();
-        sidePanelView.$el.show();
-        
-
+//        var navbarView = new NavbarView();
+//        navbarView.$el.show();
+//        var sidePanelView=new SidePanelView();
+//        sidePanelView.$el.show();
     },
     aboutRoute: function () {
         var navbarView = new NavbarView();

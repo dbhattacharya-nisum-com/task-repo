@@ -1,4 +1,4 @@
-define(['backbone','backbone.marionette','Templates','handlebars'],function(backbone,marionette, templates,handlebars){
+define(['backbone','backbone.marionette','Templates','handlebars','views/navbarView','views/sidePanelView'],function(backbone,marionette, templates,handlebars,NavbarView,SidePanelView){
 var employeeData = [
 	{id : 1, name : 'javed', age : 27},
 	{id : 2, name : 'Swathi', age : 27},
@@ -22,10 +22,17 @@ var HomeView = marionette.View.extend({
     template: _.template(templates.homeItemView),
     initialize: function () {
         this.render();
+        this.dispNavAndSidePanel();
         this.listenTo( this.collection, 'add', this.generateTable );
     },
     render: function () {
         this.$el.html(this.template);
+    },
+    dispNavAndSidePanel: function(){
+    	var navBarView = new NavbarView();
+    	navBarView.$el.show();
+    	var sidePanelView = new SidePanelView();
+    	sidePanelView.$el.show();
     },
     events:{
 		"click #editEmp" : "editEmployee",
