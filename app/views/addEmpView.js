@@ -6,6 +6,8 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView'],function
 	        this.render();
 	    },
 	    render: function () {
+					var homeView = new HomeView();
+				  homeView.dispNavAndSidePanel();
 	        this.$el.html(this.template);
 	    },
 	    events:{

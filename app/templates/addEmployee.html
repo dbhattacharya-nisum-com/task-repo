@@ -1,4 +1,4 @@
-<h5>Employee Registration </h5>
+<h5>Employee Registration <a href="#/home" class="right back"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back</a></h5>
 <small>Please fill in the form below to register.</small>
 <div class="emp-registration">
 	<div class="emp-register-tabs">
@@ -9,68 +9,63 @@
 			<div class="step"> <span><a href="#" >Experience</a></span> </div>
 			<div class="step"> <span><a href="#" >Salary Breakup</a></span> </div>	
 		</div>
-		<!-- end Responsive Arrow Progress Bar -->
-		<div class="nav clearfix">
-			<a href="javascript:void(0);" class="prev">Previous</a>
-			<a href="javascript:void(0);" class="next pull-right">Next</a>
-		</div>
 	</div>
 
 	<div class="emp-details">
 		<div id="step1">
 			<form>
 				<div class="grid-x grid-margin-x">
-					<div class="cell small-3">
+					<div class="cell small-4">
 						<label for="Employee-ID">Employee ID</label>
 						<input type="text" id="Employee-ID" name="Employee-ID input" placeholder="Employee-ID">
 					</div>
-					<div class="cell small-3">
+					<div class="cell small-4">
 						<label for="first-name">First name</label>
 						<input type="text" id="first-name" name="first name input" placeholder="First name">
 					</div>
-					<div class="cell small-3">
+					<div class="cell small-4">
 						<label for="last-name">Last name</label>
 						<input type="text" id="last-name" name="last name input" placeholder="Last name">
 					</div>
 				</div>
 				<div class="grid-x grid-margin-x">
-					<div class="cell small-3">
+					<div class="cell small-4">
 						<label for="Date-Of-Joining">Date-Of-Joining</label>
 						<input type="date" id="Date-Of-Joining" name="Date-Of-Joining input" placeholder="Date-Of-Joining" value="Date-Of-Joining">
 					</div>
-					<div class="cell small-3">                        
+					<div class="cell small-4">                        
 						<label for="Date=Of-Relieving">Date-Of-Relieving</label>
 						<input type="date" id="Date-Of-Relieving" name="Date-Of-Relieving input" placeholder="Date-Of-Relieving" value="Date-Of-Relieving">
 					</div>
-					<div class="cell small-3">
+					<div class="cell small-4">
 						<label for="D.O.B">D.O.B</label>
 						<input type="date" id="D.O.B" name="D.O.B input" placeholder="D.O.B" value="date">
 					</div>
 				</div>
 				<div class="grid-x grid-margin-x">
-					<div class="cell small-3">
+					<div class="cell small-4">
 						<label for="Pass-Port-Number">Pass-Port-Number</label>
 						<input type="text" id="Pass-Port-Number" name="Pass-Port-Number input" placeholder="Pass-Port-Number" value="">
 					</div>
-					<div class="cell small-3">
+					<div class="cell small-4">
 						<label for="PassPort-IssueDate">PassPort-IssueDate</label>
 						<input type="date" id="PassPort-IssueDate" name="PassPort-IssueDate input" placeholder="PassPort-IssueDate" value="PassPort-IssueDate">
 					</div>
-					<div class="cell small-3">
+					<div class="cell small-4">
 						<label for="passPor-tExpiryDate">PassPort-ExpiryDate</label>
 						<input type="date" id="passPort-ExpiryDate" name="passPort-ExpiryDate input" placeholder="PassPort-ExpiryDate" value="PassPort-ExpiryDate">
 					</div>
 				</div>
 				<div class="grid-x grid-margin-x">
-					<div class="cell small-3">
+					<div class="cell small-4">
 						<label for="Aadhar-Card-Number">Aadhar-Card-Number</label>
 						<input type="text" id="Aadhar-Card-Number" name="Aadhar-Card-Number input" placeholder="Aadhar-Card-Number" value="Aadhar-Card-Number">
 					</div>
-					<div class="cell small-3">
+					<div class="cell small-4">
 						<label for="PAN-CARD">Pan-Card</label>
 						<input type="text" id="PAN-CARD" name="PAN-CARD input" placeholder="Pan-Card" value="Pan-Card">
 					</div>
-					<div class="cell small-3">
+					<div class="cell small-4">
 						<div class="floated-label-wrapper">
 							<label for="email">Email</label>
 							<input type="email" id="email" name="email input" placeholder="Email" required>
@@ -78,7 +73,7 @@
 					</div>
 				</div>
 				<div class="grid-x grid-margin-x">
-					<div class="cell small-3">
+					<div class="cell small-4">
 						<label for="Male">Male</label>
 						<select>
 							<option value="Select">Select</option>
@@ -88,7 +83,7 @@
 
 						</select>
 					</div>
-					<div class="cell small-3">
+					<div class="cell small-4">
 						<label for="MaritalStatus">MaritalStatus</label>
 						<select>
 							<option value="Select">Select</option>
@@ -97,7 +92,7 @@
 							<option value="Single">Single</option>
 						</select>
 					</div>
-					<div class="cell small-3">
+					<div class="cell small-4">
 							<label for="Blood-Group">Blood-Group</label>
 							<select>
 								<option value="Select">Select</option>
@@ -113,9 +108,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="grid-x grid-margin-x">
-					<button type="button" class="button submit" id="steptwosubmit" onclick="return handleChange()">Save</button>
-					<!-- <input class="button expanded submit" type="back" value="SUBMIT" id="steptwosubmit" onclick="return handleChange()"> -->
+				<div class="nav clearfix text-center"><br />
+					<button type="button" class="prev button small" id="" onclick="return handleChange()">Previous</button>
+					<button type="button" class="next button small" id="steptwosubmit" onclick="return handleChange()">Save & Next</button>
 				</div>
 			</form>
 		</div>
