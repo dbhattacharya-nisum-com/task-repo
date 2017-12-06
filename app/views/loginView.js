@@ -5,6 +5,7 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView','cryptojs
         template: _.template(templates.loginPageItemView),
         initialize: function () {
             this.render();
+            $(".content-area").addClass("login");
             // Loading GAPI
             gapi.load('client:auth2', this.initClient);
 

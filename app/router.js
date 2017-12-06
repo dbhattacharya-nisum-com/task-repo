@@ -1,4 +1,4 @@
-define(['backbone', 'backbone.marionette','views/loginView','views/homeView', 'views/navbarView','views/addEmpView','views/aboutView','views/sidePanelView'], function(Backbone,Marionette,LoginView,HomeView,NavbarView, AddEmpView,AboutView,SidePanelView) {  
+define(['backbone', 'backbone.marionette','views/loginView','views/homeView', 'views/navbarView','views/addEmpView','views/aboutView','views/sidePanelView','collections/employeeListCollection'], function(Backbone,Marionette,LoginView,HomeView,NavbarView, AddEmpView,AboutView,SidePanelView,EmployeeList) {  
 var Router =Marionette.AppRouter.extend({
    navbarView :null,
    sidePanelView: null,
@@ -26,7 +26,7 @@ var Router =Marionette.AppRouter.extend({
     },
     homeRoute: function () {
         this.checkNavBar();
-        var homeView = new HomeView();
+        var homeView=new HomeView({collection: new EmployeeList()});
 
     },
     aboutRoute: function () {

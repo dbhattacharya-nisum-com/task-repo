@@ -1,40 +1,27 @@
 define(['backbone','backbone.marionette','Templates','handlebars'],function(backbone,marionette, templates,handlebars){
-var Employee = Backbone.Model.extend({
-    // defaults: {
-    //     id: '',
-    //     name: '',
-    //     age: ''
-    // }
-});
 
-var EmpList =  Backbone.Collection.extend({
-	model: Employee,
-	url:"http://localhost:8080/portal/hr/v1/employee/all",
-	initialize:function(){
-	},
-	parse : function(response){
-		console.log("parse");
-		return response.Success;  
-}
-});
+
 var HomeView = marionette.View.extend({
     el:'#main-content',
     template:templates.homeItemView,
-    initialize: function () {
-        var self=this;				
-				this.collection=new EmpList();
+    initialize: function (options) {
+		var self=this;		
+			console.log(options);		
+				this.collection=options.collection;
 				this.collection.fetch({
-					success: function(data){
+					success: function(data,response){
 						self.render();
+						console.log();
+					},error: function(data,response){
+						console.log("error");
+						console.log(response);
 					}
 				});
 				this.listenTo( this.collection, 'add');
-
-				self.render();
-		this.listenTo( this.collection, 'add', this.render());
-    },
+    },		
     render: function () {
-        this.$el.html(this.template({empList: this.collection.toJSON()}));
+		console.log(this.collection.models[0].attributes);
+        this.$el.html(this.template({empList: this.collection.models[0].attributes}));
     },
     
     events:{

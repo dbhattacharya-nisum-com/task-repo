@@ -11,8 +11,9 @@
                 </tr>
             </thead>
             <tbody>
+                
                 {{#if empList.Success}}
-                {{#each empList}}
+                {{#each empList.Success}}
                 <tr>
                         <td>{{this.empId}}</td>
                         <td>{{this.firstName}}</td>
