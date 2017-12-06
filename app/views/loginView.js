@@ -42,7 +42,6 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView','cryptojs
                             'requestMask.includeField': 'person.names'
                         }).then(function (response) {
                             if (googleUser.getHostedDomain() === "nisum.com") {
-                                var homeView = new HomeView();
                                 backbone.history.navigate('home',true);
                                 $(".content-area").removeClass("login");
                                 localStorage.setItem("loggedIn", true);
