@@ -5,21 +5,18 @@ var Router = Marionette.AppRouter.extend({
         '': 'loginRoute',
         'home': 'homeRoute',
         'about': 'aboutRoute', 
-        'addEmp': 'addEmpRoute'
+        'addEmp': 'addEmpRoute',
+        'loginHandler:code': 'loginHandler'
     },
     loginRoute:function(){
-    	var navbarView = new NavbarView();
-        navbarView.$el.hide();
+
         var loginView = new LoginView(); 
+    },
+    loginHandler: function (code) {
+
     },
     homeRoute: function () {
         var homeView = new HomeView();
-        homeView.generateTable(); 
-        var navbarView = new NavbarView();
-        navbarView.$el.show();
-        var sidePanelView=new SidePanelView();
-        sidePanelView.$el.show();
-        
 
     },
     aboutRoute: function () {

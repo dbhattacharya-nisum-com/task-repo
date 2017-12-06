@@ -1,21 +1,29 @@
-define(['backbone','backbone.marionette','Templates', 'cryptojs'],function(backbone,marionette,templates, CryptoJS){
-	
+define(['backbone','backbone.marionette','Templates', 'views/homeView', 'views/navbarView','views/sidePanelView', 'cryptojs'],function(backbone,marionette,templates,HomeView,NavbarView,SidePanelView, CryptoJS){
+
 	var loginView = marionette.View.extend({
         el:'#main-content',
         template: _.template(templates.loginPageItemView),
         initialize: function () {
             this.render();
+            this.hideNavAndSidePanel();
+            // Loading GAPI
             gapi.load('client:auth2', this.initClient);
-
         },
         render: function () {
             this.$el.html(this.template);
+        },
+        hideNavAndSidePanel: function (){
+        	var navBarView = new NavbarView();
+        	navBarView.$el.hide();
+        	var sidePanelView = new SidePanelView();
+            sidePanelView.$el.hide();
+            $(".content-area").addClass("login");
         },
         events:{
             'click #login-btn':'handleSignInClick',
         },
         initClient: function () {
-            // let context = this;
+            // Initializing the client
             gapi.client.init({
                 apiKey: "AIzaSyD4swrOLLYbcI54A_PmkLfLbcIpO_vGk_Q",
                 discoveryDocs: ["https://people.googleapis.com/$discovery/rest?version=v1"],
@@ -39,14 +47,19 @@ define(['backbone','backbone.marionette','Templates', 'cryptojs'],function(backb
                             'requestMask.includeField': 'person.names'
                         }).then(function (response) {
                             if (googleUser.getHostedDomain() === "nisum.com") {
+                                var homeView = new HomeView();
                                 localStorage.setItem("loggedIn", true);
                                 localStorage.setItem("userId", CryptoJS.MD5(basicProfile.getId()));
                                 localStorage.setItem("userName", basicProfile.getName());
                                 localStorage.setItem("userEmail", basicProfile.getEmail());
                                 localStorage.setItem("userImage", basicProfile.getImageUrl());
                                 backbone.history.navigate('home',true);
+
+                                $(".content-area").removeClass("login");
+
                             } else {
                                 console.error("You are not authorised to access the portal. Please request access from the administrator or login with correct credentials");
+                                gapi.auth2.getAuthInstance().signOut();
                             }
 
                         }, function (reason) {

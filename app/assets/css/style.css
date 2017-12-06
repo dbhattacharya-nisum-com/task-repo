@@ -6639,6 +6639,15 @@ a.thumbnail image {
   float: right;
 }
 
+/* For temp purpose only */
+.error {
+  border: 1px solid #ff0000;
+}
+
+.main-wrapper h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
 /* Partials for  */
 .login-wrapper {
   position: absolute;
@@ -6695,7 +6704,6 @@ header .curve-shape {
 header nav {
   background: #01b4e6;
   color: #fff;
-  flex: 1;
   align-items: center;
   justify-content: center;
   height: 50px;
@@ -6730,6 +6738,14 @@ header .user-info span::after {
 header .user-info a {
   color: #000000;
 }
+header .module-title {
+  background: #01b4e6;
+  flex: 1;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 0 0 0;
+  text-align: center;
+}
 
 .main-wrapper {
   display: flex;
@@ -6760,6 +6776,7 @@ header .user-info a {
   padding: 8px 12px;
 }
 .main-wrapper .left-container .emp-nav ul li a:hover {
+  background: #f8f8f8;
   color: #000;
 }
 .main-wrapper .content-area {
@@ -6770,6 +6787,9 @@ header .user-info a {
   padding: 20px;
   /* For Progress bar styles */
   /* Responsive Arrow Progress Bar */
+}
+.main-wrapper .content-area.login {
+  background: transparent;
 }
 .main-wrapper .content-area h6 {
   border-bottom: dotted 1px #ccc;
@@ -6810,6 +6830,7 @@ header .user-info a {
   margin: 15px 0 10px 0;
 }
 .main-wrapper .content-area .arrow-steps {
+  margin: 0 0 15px 0;
   width: 100%;
 }
 .main-wrapper .content-area .arrow-steps .step {
@@ -6819,7 +6840,7 @@ header .user-info a {
   float: left;
   font-size: 14px;
   margin: 0 1px 0 0;
-  padding: 8px 30px;
+  padding: 8px 50px;
   position: relative;
   text-align: center;
 }
@@ -6834,40 +6855,10 @@ header .user-info a {
   right: -17px;
   width: 0;
   height: 0;
-  border-top: 19px solid transparent;
+  border-top: 20px solid transparent;
   border-bottom: 17px solid transparent;
   border-left: 17px solid #ddd;
   z-index: 2;
-}
-.main-wrapper .content-area .arrow-steps .step:before {
-  right: auto;
-  left: 0;
-  border-left: 17px solid #fff;
-  z-index: 0;
-}
-.main-wrapper .content-area .arrow-steps .step:first-child:before {
-  border: none;
-}
-.main-wrapper .content-area .arrow-steps .step:last-child:after {
-  border: none;
-}
-.main-wrapper .content-area .arrow-steps .step:first-child {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-.main-wrapper .content-area .arrow-steps .step:last-child {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-.main-wrapper .content-area .arrow-steps .step span {
-  position: relative;
-}
-.main-wrapper .content-area *.arrow-steps .step.done span:before {
-  content: "✓";
-  position: absolute;
-  top: 2px;
-  left: -10px;
-  font-size: 11px;
 }
 .main-wrapper .content-area .arrow-steps .step.current {
   color: #fff;
@@ -6877,8 +6868,11 @@ header .user-info a {
   color: #fff;
   text-decoration: none;
 }
-.main-wrapper .content-area .arrow-steps .step.current:after {
+.main-wrapper .content-area .arrow-steps .step.current::after {
   border-left: 17px solid #94b52d;
+}
+.main-wrapper .content-area .arrow-steps .step span {
+  position: relative;
 }
 .main-wrapper .content-area .arrow-steps .step.done {
   color: #173352;
@@ -6888,8 +6882,48 @@ header .user-info a {
   color: #173352;
   text-decoration: none;
 }
-.main-wrapper .content-area .arrow-steps .step.done:after {
+.main-wrapper .content-area .arrow-steps .step.done::after {
   border-left: 17px solid #94b52d;
+}
+.main-wrapper .content-area .arrow-steps .step::before {
+  right: auto;
+  left: 0;
+  border-left: 17px solid #fff;
+  z-index: 0;
+}
+.main-wrapper .content-area .arrow-steps .step:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.main-wrapper .content-area .arrow-steps .step:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.main-wrapper .content-area .arrow-steps .step:first-child:before, .main-wrapper .content-area .arrow-steps .step:last-child:after {
+  border: none;
+}
+.main-wrapper .content-area *.arrow-steps .step.done span:before {
+  content: "✓";
+  position: absolute;
+  top: 2px;
+  left: -20px;
+  font-size: 11px;
+}
+.main-wrapper .content-area .emp-registration {
+  margin: 0 auto;
+  width: 85%;
+}
+.main-wrapper .content-area .add-employee, .main-wrapper .content-area .back {
+  background: #e5e5e5;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #000;
+  font-size: 12px;
+  margin: 0 0 10px 0;
+  padding: 3px 6px;
+}
+.main-wrapper .content-area .add-employee i, .main-wrapper .content-area .back i {
+  margin: 0 5px 0 0;
 }
 
 /*# sourceMappingURL=style.css.map */

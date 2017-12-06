@@ -4,7 +4,7 @@ define(function (require,hbars) {
     return {
         navbarItemView: require('text!templates/navbar.html'),
         loginPageItemView: require('text!templates/login.html'),
-        homeItemView : require('text!templates/home.html'),
+        homeItemView : require('hbars!templates/home'),
         rowItemView : require('text!templates/rowTemplate.html'),
         tableItemView : require('text!templates/tableTemplate.html'),
         addEmpItemView : require('text!templates/addEmployee.html'),
