@@ -31,8 +31,6 @@ var HomeView = marionette.View.extend({
 				this.listenTo( this.collection, 'add');
 
 				self.render();
-			}
-		});
 		this.listenTo( this.collection, 'add', this.render());
     },
     render: function () {

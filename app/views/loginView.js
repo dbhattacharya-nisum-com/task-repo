@@ -1,4 +1,4 @@
-define(['backbone','backbone.marionette','Templates', 'views/homeView', 'views/navbarView','views/sidePanelView', 'cryptojs'],function(backbone,marionette,templates,HomeView,NavbarView,SidePanelView, CryptoJS){
+define(['backbone','backbone.marionette','Templates', 'views/homeView','cryptojs'],function(backbone,marionette,templates,HomeView,CryptoJS){
 
 	var loginView = marionette.View.extend({
         el:'#main-content',
