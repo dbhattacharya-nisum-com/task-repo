@@ -29,7 +29,7 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView', 'views/n
                 discoveryDocs: ["https://people.googleapis.com/$discovery/rest?version=v1"],
                 clientId: "545604378019-4msm2qi82vbsqiga80clmqf3fkdv4ms2.apps.googleusercontent.com",
                 scope: "profile",
-                // hostedDomain: "nisum.com"
+                hostedDomain: "nisum.com"
             }).then(function () {
                 // Listen for sign-in state changes.
                 gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
@@ -48,18 +48,14 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView', 'views/n
                         }).then(function (response) {
                             if (googleUser.getHostedDomain() === "nisum.com") {
                                 var homeView = new HomeView();
+                                backbone.history.navigate('home',true);
+                                $(".content-area").removeClass("login");
                                 localStorage.setItem("loggedIn", true);
                                 localStorage.setItem("userId", CryptoJS.MD5(basicProfile.getId()));
                                 localStorage.setItem("userName", basicProfile.getName());
                                 localStorage.setItem("userEmail", basicProfile.getEmail());
                                 localStorage.setItem("userImage", basicProfile.getImageUrl());
-                                backbone.history.navigate('home',true);
 
-                                $(".content-area").removeClass("login");
-
-                            } else {
-                                console.error("You are not authorised to access the portal. Please request access from the administrator or login with correct credentials");
-                                gapi.auth2.getAuthInstance().signOut();
                             }
 
                         }, function (reason) {

@@ -16,7 +16,7 @@ define(['backbone','backbone.marionette','Templates'],function(backbone,marionet
                  discoveryDocs: ["https://people.googleapis.com/$discovery/rest?version=v1"],
                  clientId: "545604378019-4msm2qi82vbsqiga80clmqf3fkdv4ms2.apps.googleusercontent.com",
                  scope: "profile",
-                 // hostedDomain: "nisum.com"
+                 hostedDomain: "nisum.com"
              });
          },
          events: {
@@ -24,6 +24,7 @@ define(['backbone','backbone.marionette','Templates'],function(backbone,marionet
          },
          onLogoutAttempt: function (event) {
              event.preventDefault();
+             gapi.auth2.getAuthInstance().disconnect();
              gapi.auth2.getAuthInstance().signOut();
              backbone.history.navigate('',true);
              localStorage.clear();
