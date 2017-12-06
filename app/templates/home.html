@@ -11,7 +11,7 @@
                 </tr>
             </thead>
             <tbody>
-                {{empList.Success}}
+                {{#if empList.Success}}
                 {{#each empList}}
                 <tr>
                         <td>{{this.empId}}</td>
@@ -19,7 +19,9 @@
                         <td>{{this.gender}}</td>
                 </tr>
                 {{/each}}
+               {{else}}
+             <p class="alert callout text-center no-results">No Record found</p>
+            {{/if}}
             </tbody>
         </table>
-           
     </div>
