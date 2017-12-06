@@ -21,8 +21,7 @@ var HomeView = marionette.View.extend({
     el:'#main-content',
     template:templates.homeItemView,
     initialize: function () {
-        var self=this;
-				
+        var self=this;				
 				this.collection=new EmpList();
 				this.collection.fetch({
 					success: function(data){
@@ -30,7 +29,11 @@ var HomeView = marionette.View.extend({
 					}
 				});
 				this.listenTo( this.collection, 'add');
+
 				self.render();
+			}
+		});
+		this.listenTo( this.collection, 'add', this.render());
     },
     render: function () {
         this.$el.html(this.template({empList: this.collection.toJSON()}));

@@ -9,7 +9,8 @@ require.config({
     'backbone.marionette': 'assets/vendor/marionette/lib/backbone.marionette',
     'text': 'assets/vendor/requirejs-text/text',
     'handlebars':'assets/vendor/handlebars/handlebars',
-    'hbars':'hbars'
+    'hbars':'hbars',
+    'cryptojs': 'assets/vendor/crypto-js/crypto-js'
   },
   shim: {
     underscore: {

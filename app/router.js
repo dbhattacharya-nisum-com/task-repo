@@ -6,7 +6,8 @@ var Router =Marionette.AppRouter.extend({
         '': 'loginRoute',
         'home': 'homeRoute',
         'about': 'aboutRoute', 
-        'addEmp': 'addEmpRoute'
+        'addEmp': 'addEmpRoute',
+        'loginHandler:code': 'loginHandler'
     },
     initialize : function(Router){
     console.log(this,"Router")
@@ -19,6 +20,9 @@ var Router =Marionette.AppRouter.extend({
         }
         var loginView = new LoginView(); 
        
+    },
+    loginHandler: function (code) {
+
     },
     homeRoute: function () {
         this.checkNavBar();
