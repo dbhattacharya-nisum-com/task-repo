@@ -1,4 +1,4 @@
-define(['backbone','backbone.marionette','Templates','handlebars','views/navbarView','views/sidePanelView'],function(backbone,marionette, templates,handlebars,NavbarView,SidePanelView){
+define(['backbone','backbone.marionette','Templates','handlebars'],function(backbone,marionette, templates,handlebars){
 var Employee = Backbone.Model.extend({
     // defaults: {
     //     id: '',
@@ -22,7 +22,7 @@ var HomeView = marionette.View.extend({
     template:templates.homeItemView,
     initialize: function () {
         var self=this;
-				this.dispNavAndSidePanel();
+				
 				this.collection=new EmpList();
 				this.collection.fetch({
 					success: function(data){
@@ -35,12 +35,7 @@ var HomeView = marionette.View.extend({
     render: function () {
         this.$el.html(this.template({empList: this.collection.toJSON()}));
     },
-    dispNavAndSidePanel: function(){
-    	var navBarView = new NavbarView();
-    	navBarView.$el.show();
-    	var sidePanelView = new SidePanelView();
-    	sidePanelView.$el.show();
-    },
+    
     events:{
 		"click #editEmp" : "editEmployee",
 		"click #delEmp" : "delEmployee"
@@ -67,7 +62,6 @@ var HomeView = marionette.View.extend({
     			if(name != undefined && age != undefined){
     				empList.add({id: id, name: name, age: age}, { merge: true });
     				var homeView = new HomeView();
-    				homeView.generateTable();
     			}
     		}
     	});

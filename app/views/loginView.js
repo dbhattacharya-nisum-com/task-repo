@@ -5,18 +5,12 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView', 'views/n
         template: _.template(templates.loginPageItemView),
         initialize: function () {
             this.render();
-            this.hideNavAndSidePanel();
+           
         },
         render: function () {
             this.$el.html(this.template);
         },
-        hideNavAndSidePanel: function (){
-        	var navBarView = new NavbarView();
-        	navBarView.$el.hide();
-        	var sidePanelView = new SidePanelView();
-            sidePanelView.$el.hide();
-            $(".content-area").addClass("login");
-        },
+       
         events:{
             'click #login-btn':'onLoginAttempt'
         },
