@@ -11,7 +11,7 @@ var HomeView = marionette.View.extend({
 				this.collection.fetch({
 					success: function(data,response){
 						self.render();
-						console.log();
+						console.log(data);
 					},error: function(data,response){
 						console.log("error");
 						console.log(response);
