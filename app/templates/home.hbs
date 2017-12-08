@@ -2,6 +2,10 @@
     <a id="addEmpButton" class="right small add-employee" href="#/addEmp"><i class="fa fa-address-card" aria-hidden="true"></i> Add Employee</a>
 </div>
 <div class="small-12 cell" id="gridReg">
+    {{#if errorObj}}     
+            <p class="alert callout text-center no-results">{{error.errorMessage}}</p>
+    {{/if}}
+     {{#if empList.Success}}
         <table>
             <thead>
                 <tr>
@@ -11,8 +15,7 @@
                 </tr>
             </thead>
             <tbody>
-                
-                {{#if empList.Success}}
+               
                 {{#each empList.Success}}
                 <tr>
                         <td>{{this.empId}}</td>
@@ -20,9 +23,9 @@
                         <td>{{this.gender}}</td>
                 </tr>
                 {{/each}}
-               {{else}}
-             <p class="alert callout text-center no-results">No Record found</p>
-            {{/if}}
             </tbody>
         </table>
+         {{else}}
+             <p class="alert callout text-center no-results">Employee details are not available</p>
+            {{/if}}
     </div>

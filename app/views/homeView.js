@@ -8,18 +8,21 @@ var HomeView = marionette.View.extend({
 		var self=this;		
 				
 				this.collection=options.collection;
-				this.collection.fetch({
-					success: function(data,response){
-						self.render();
-					},error: function(data,response){
-						console.log("error");
-						console.log(response);
-					}
-				});
 				this.listenTo( this.collection, 'add');
+				this.render();
     },		
     render: function () {
-        this.$el.html(this.template({empList: this.collection.models[0].attributes}));
+		var self=this;
+		this.collection.fetch({
+			success: function(data,response){
+				self.$el.html(self.template({empList: self.collection.models[0].attributes}));
+			},error: function(data,response){
+				console.log("error", response);
+
+				self.$el.html(self.template({errorObj:{'errorCode':500,'errorMessage':"ERROR"}}));
+			}
+		});
+        
     },
     
     events:{
