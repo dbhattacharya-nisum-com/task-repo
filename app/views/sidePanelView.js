@@ -3,7 +3,7 @@ define(['backbone','backbone.marionette','Templates'],function(backbone,marionet
         
     var sidePanelView = marionette.View.extend({
         el:'#sidepanel',
-        template: _.template(template.sidePanelView),
+        template:template.sidePanelView,
         initialize: function () {
             this.render();
         },

@@ -10,7 +10,6 @@ var Router =Marionette.AppRouter.extend({
         'loginHandler:code': 'loginHandler'
     },
     initialize : function(Router){
-    console.log(this,"Router")
     },
 
     loginRoute:function(){
@@ -41,7 +40,7 @@ var Router =Marionette.AppRouter.extend({
     },
     checkNavBar:function(){
         if(this.navbarView==null || this.sidePanelView==null){
-            this.navbarView = new NavbarView();
+            this.navbarView = new NavbarView({model: localStorage.getItem('userObj')});
             this.sidePanelView = new SidePanelView();
         }
         else{

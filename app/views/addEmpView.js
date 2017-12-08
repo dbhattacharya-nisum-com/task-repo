@@ -1,7 +1,7 @@
 define(['backbone','backbone.marionette','Templates', 'views/homeView'],function(backbone,marionette,templates, HomeView){
 	var AddEmpView = marionette.View.extend({
 	    el:'#main-content',
-	    template: _.template(templates.addEmpItemView),
+	    template:templates.addEmpItemView,
 	    initialize: function () {
 	        this.render();
 	    },

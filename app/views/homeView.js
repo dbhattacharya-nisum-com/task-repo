@@ -6,12 +6,11 @@ var HomeView = marionette.View.extend({
     template:templates.homeItemView,
     initialize: function (options) {
 		var self=this;		
-			console.log(options);		
+				
 				this.collection=options.collection;
 				this.collection.fetch({
 					success: function(data,response){
 						self.render();
-						console.log(data);
 					},error: function(data,response){
 						console.log("error");
 						console.log(response);
@@ -20,7 +19,6 @@ var HomeView = marionette.View.extend({
 				this.listenTo( this.collection, 'add');
     },		
     render: function () {
-		console.log(this.collection.models[0].attributes);
         this.$el.html(this.template({empList: this.collection.models[0].attributes}));
     },
     

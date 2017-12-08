@@ -2,13 +2,14 @@ define(['backbone','backbone.marionette','Templates'],function(backbone,marionet
 
      var NavbarView = marionette.View.extend({
 	 	el : "#navbar",
-        template:_.template(templates.navbarItemView),
-         initialize: function () {
+        template:templates.navbarItemView,
+         initialize: function (options) {
+             this.model=JSON.parse(options.model);
              this.render();
              gapi.load('client:auth2', this.initClient);
          },
          render: function () {
-             this.$el.html(this.template);
+             this.$el.html(this.template({'userObj':this.model}));
          },
          initClient: function () {
              gapi.client.init({

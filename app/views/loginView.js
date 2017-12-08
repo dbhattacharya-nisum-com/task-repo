@@ -2,7 +2,7 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView','cryptojs
 
 	var loginView = marionette.View.extend({
         el:'#main-content',
-        template: _.template(templates.loginPageItemView),
+        template:templates.loginPageItemView,
         initialize: function () {
             this.render();
             $(".content-area").addClass("login");
@@ -41,16 +41,15 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView','cryptojs
                             'resourceName': 'people/me',
                             'requestMask.includeField': 'person.names'
                         }).then(function (response) {
-                            if (googleUser.getHostedDomain() === "nisum.com") {
-                                backbone.history.navigate('home',true);
+                                var profile={
+                                    emailId: basicProfile.getEmail(),
+                                    userName: basicProfile.getName(),
+                                    imageUrl: basicProfile.getImageUrl()
+                                };
+                                localStorage.setItem("userObj",JSON.stringify(profile));
+                                // localStorage.setItem("userId", CryptoJS.MD5(basicProfile.getId()));
+                                  backbone.history.navigate('home',true);
                                 $(".content-area").removeClass("login");
-                                localStorage.setItem("loggedIn", true);
-                                localStorage.setItem("userId", CryptoJS.MD5(basicProfile.getId()));
-                                localStorage.setItem("userName", basicProfile.getName());
-                                localStorage.setItem("userEmail", basicProfile.getEmail());
-                                localStorage.setItem("userImage", basicProfile.getImageUrl());
-
-                            }
 
                         }, function (reason) {
                             console.log('Error: ' + reason.result.error.message);

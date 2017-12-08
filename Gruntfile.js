@@ -38,28 +38,6 @@ module.exports = function(grunt) {
       src: ['app/**/*.js', '!**/assets/vendor/**', '!**/main.js'],
       specs: 'specs/**/*Spec.js'
     },
-    // Task configuration
-    // less: {
-    //     development: {
-    //         options: {
-    //           compress: false,  // no minification in dev
-    //         },
-    //         files: {
-    //           //compiling base.less into styles.css
-    //           "./app/assets/css/styles.css":"./app/assets/css/base.less"
-    //         }
-    //     },
-    //     production: {
-    //       options: {
-    //         cleancss: true, // minify css
-    //         // compress: true, // minify css
-    //       },
-    //       files: {
-    //         //compiling base.less into main.min.css
-    //         "./dist/main.min.css": "./app/assets/css/base.less"
-    //       }
-    //     }
-    // },
     sass:{
       dist:{
         options:{
@@ -136,6 +114,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-auto-install');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
   // Task definition
-  grunt.registerTask('default', ['sass','auto_install','handlebars']);
+  grunt.registerTask('default', ['auto_install','handlebars']);
   grunt.task.run('default');
 };

@@ -2,14 +2,12 @@ define(function (require,hbars) {
     'use strict';
 
     return {
-        navbarItemView: require('text!templates/navbar.html'),
-        loginPageItemView: require('text!templates/login.html'),
+        navbarItemView: require('hbars!templates/navbar'),
+        loginPageItemView: require('hbars!templates/login'),
         homeItemView : require('hbars!templates/home'),
-        rowItemView : require('text!templates/rowTemplate.html'),
-        tableItemView : require('text!templates/tableTemplate.html'),
-        addEmpItemView : require('text!templates/addEmployee.html'),
-        editEmpItemView : require('text!templates/editEmployee.html'),
+        addEmpItemView : require('hbars!templates/addEmployee'),
+        editEmpItemView : require('hbars!templates/editEmployee'),
         aboutItemView:require('hbars!templates/about'),
-        sidePanelView:require('text!templates/sidepanel.html')
+        sidePanelView:require('hbars!templates/sidepanel')
     };
 });
