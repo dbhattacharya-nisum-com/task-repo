@@ -169,7 +169,35 @@
         
     .emp-registration {
         margin: 0 auto;
-        width: 85%;
+        width: 95%;
+        .emp-details {
+            .add-experience {
+                display: inline-block;
+                margin: 32px 0 0 0;
+            }
+            form {
+                label.mandatory {
+                    &::after {
+                        content: "*";
+                        color: red;
+                        font-size: 12px;
+                        margin: 0 0 0 3px;
+                    }
+                    &.error {
+                        border: none;
+                        color: red;
+                    }
+                }
+                .required {
+                    &::before {
+                        content: "*";
+                        color: red;
+                        font-size: 12px;
+                        margin: 0 3px 0 0;
+                    }
+                }
+            }
+        }
     }
     .add-employee, .back {
         background: #e5e5e5;
