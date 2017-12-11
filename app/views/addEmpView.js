@@ -3,27 +3,57 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView'],function
 	    el:'#main-content',
 	    template:templates.addEmpItemView,
 	    initialize: function () {
+				console.log("initialized add employee")
 	        this.render();
 	    },
 	    render: function () {
 	        this.$el.html(this.template);
 	    },
 	    events:{
-			"click #addEmpl":"addEmployee"
+			"click #steptwosubmit":"addEmployee"
 		},
 		addEmployee: function(e){
+
 			e.preventDefault();
-			var id = this.$el.find("#id").val();
-			var name = this.$el.find("#name").val();
-			var age = this.$el.find("#age").val();
-			if(id != undefined && name != undefined && age != undefined){
-				var homeView = new HomeView();
-				var empList = homeView.fetchCollection();
-				empList.add({id: id, name: name, age: age});
-//				console.log(empList.length);
-				backbone.history.navigate('home',true);
-				homeView.generateTable();
-			}
+			var employeeDetails={};
+			var temp = $('#empForm').serializeArray();
+			var temp2 = $('#empId').val();
+			$.map($('#empForm').serializeArray(),function(n,i){
+				employeeDetails[n['name']]=n['value'];
+			})
+		
+			this.model.set(employeeDetails,{validate:true});
+
+			if(this.model.validationError){
+					this.showErrors(this.model.validationError);
+			}else{
+						this.hideErrors(this.model.validationError);
+						this.model.save(this.model.attributes,{success:function(response){
+							alert('Employee added Successfully');
+						},error:function(err){
+							alert('Error in adding employee');
+						}
+					});
+			 
+			} 
+	
+		},
+
+		showErrors: function(errors) {
+			this.$('.control-group').find('input,select').removeClass('error');
+			this.$('.help-inline').text('');
+			_.each(errors, function (value,key) {
+					console.log(value);
+					var controlGroup = this.$('.' + value.name);
+					
+					controlGroup.find('input,select').addClass('error');
+					controlGroup.find('.help-inline').text(value.message);
+			}, this);
+		},
+
+		hideErrors: function () {
+			var chck = this.$('.control-group');
+			this.$('.help-inline').text('');
 		},
 		progressTab : function(){
 			var back = $(".prev");

@@ -1,4 +1,4 @@
-define(['backbone', 'backbone.marionette','views/loginView','views/homeView', 'views/navbarView','views/addEmpView','views/aboutView','views/sidePanelView','collections/employeeListCollection'], function(Backbone,Marionette,LoginView,HomeView,NavbarView, AddEmpView,AboutView,SidePanelView,EmployeeList) {  
+define(['backbone', 'backbone.marionette','views/loginView','views/homeView', 'views/navbarView','views/addEmpView','views/aboutView','views/sidePanelView','collections/employeeListCollection', 'models/employeeModel'], function(Backbone,Marionette,LoginView,HomeView,NavbarView, AddEmpView,AboutView,SidePanelView,EmployeeList, employeeModel) {  
 var Router =Marionette.AppRouter.extend({
    navbarView :null,
    sidePanelView: null,
@@ -35,7 +35,8 @@ var Router =Marionette.AppRouter.extend({
     },
     addEmpRoute: function(){
     	this.checkNavBar();
-        var addEmpView = new AddEmpView();
+        var empModel = new employeeModel();
+        var addEmpView = new AddEmpView({model:empModel});
         addEmpView.progressTab();
     },
     checkNavBar:function(){
