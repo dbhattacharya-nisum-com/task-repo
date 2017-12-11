@@ -171,9 +171,23 @@
         margin: 0 auto;
         width: 95%;
         .emp-details {
+            .experience {
+                &:nth-child(1) {
+                    h6 i {
+                        display: none;
+                    }
+                }
+                .del-exp {
+                    cursor: pointer;
+                    color: red;
+                }
+            }
             .add-experience {
                 display: inline-block;
-                margin: 32px 0 0 0;
+                margin: 10px 0 0 0;
+                &.disable {
+                    pointer-events: none;
+                }
             }
             form {
                 label.mandatory {
@@ -201,7 +215,7 @@
     }
     .add-employee, .back {
         background: #e5e5e5;
-        border: 1px solid #ccc;
+        //border: 1px solid #ccc;
         border-radius: 3px;
         color: #000;
         font-size: 12px;

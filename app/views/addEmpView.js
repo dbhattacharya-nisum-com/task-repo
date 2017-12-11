@@ -43,7 +43,6 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView'],function
 			this.$('.control-group').find('input,select').removeClass('error');
 			this.$('.help-inline').text('');
 			_.each(errors, function (value,key) {
-					console.log(value);
 					var controlGroup = this.$('.' + value.name);
 					
 					controlGroup.find('input,select').addClass('error');

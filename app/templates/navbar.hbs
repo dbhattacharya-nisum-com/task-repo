@@ -8,8 +8,15 @@
     </nav>
     <div class="module-title">HR Portal </div>
     <div class="user-info">
+      <span>{{userObj.userName}}</span> &nbsp;
       <i class="fa fa-user-circle" aria-hidden="true"></i>
-      Welcome: <span>{{userObj.userName}}</span>
-      <a id="logout_user"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+      <i class="fa fa-caret-down" aria-hidden="true"></i>
+      <div class="user-details">
+        <ul>
+          <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> My Profile</a></li>
+          <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Profile Settings</a></li>
+          <li><a id="logout_user"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+        </ul>
+      </div>
     </div>
 </header>
