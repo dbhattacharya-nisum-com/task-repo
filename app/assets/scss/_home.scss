@@ -172,14 +172,21 @@
         width: 95%;
         .emp-details {
             .experience {
+                h6 {
+                    background: #e8e8e8;
+                    padding: 6px;
+                }
                 &:nth-child(1) {
-                    h6 i {
-                        display: none;
+                    h6 {
+                        background: none;
+                        i {
+                            display: none;
+                        }
                     }
                 }
                 .del-exp {
                     cursor: pointer;
-                    color: red;
+                    margin-top: 2px;
                 }
             }
             .add-experience {
