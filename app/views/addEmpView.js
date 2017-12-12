@@ -4,6 +4,7 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView'],function
 	    template:templates.addEmpItemView,
 	    initialize: function () {
 				console.log("initialized add employee")
+			
 	        this.render();
 	    },
 	    render: function () {
@@ -11,9 +12,21 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView'],function
 	    },
 	    events:{
 			"click #steptwosubmit":"addEmployee"
+			"click #steptwosubmit":"addEmployee",
+			"focusout input,select":  "contentChanged"
+		},
+		
+		contentChanged: function(e) {
+			console.log($(e.currentTarget).val());
+			if($(e.currentTarget).val()==undefined || $(e.currentTarget).val()=='')
+					$(e.currentTarget).addClass('error');
+			else
+					$(e.currentTarget).removeClass('error');		
 		},
 		addEmployee: function(e){
 
+		//Function to Save Employee Data
+		addEmployee: function(e){
 			e.preventDefault();
 			var employeeDetails={};
 			var temp = $('#empForm').serializeArray();
@@ -29,8 +42,10 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView'],function
 			}else{
 						this.hideErrors(this.model.validationError);
 						this.model.save(this.model.attributes,{success:function(response){
+							this.hideErrors(this.model.validationError);
 							alert('Employee added Successfully');
 						},error:function(err){
+							this.hideErrors(this.model.validationError);
 							alert('Error in adding employee');
 						}
 					});
@@ -39,6 +54,8 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView'],function
 	
 		},
 
+	
+		//Function to show Errors
 		showErrors: function(errors) {
 			this.$('.control-group').find('input,select').removeClass('error');
 			this.$('.help-inline').text('');
@@ -51,10 +68,13 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView'],function
 			}, this);
 		},
 
+		//Function to Hide Errors
 		hideErrors: function () {
 			var chck = this.$('.control-group');
 			this.$('.help-inline').text('');
 		},
+		
+		
 		progressTab : function(){
 			var back = $(".prev");
 			var next = $(".next");

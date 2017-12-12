@@ -1,0 +1,24 @@
+{
+  "Employees": [
+    {
+      "empId": "121212",
+      "firstName": "fsakfh",
+      "lastName": "fhdsaljfl",
+      "email": "fasd@gmail.com",
+      "gender": "Male",
+      "dob": "2016-08-30",
+      "maritalStatus": "Un Married",
+      "bloodGroup": "A-ve",
+      "dateOfJoining": "2016-11-30",
+      "dateOfReleiving": "2016-10-29",
+      "designation": "fsaf",
+      "location": " fasf",
+      "passportNo": "fasdf",
+      "passportIssueDate": "2016-11-30",
+      "passportExpDate": "2017-12-30",
+      "aadharCard": "fasdf",
+      "panCard": "asdf",
+      "id": 1
+    }
+  ]
+}
