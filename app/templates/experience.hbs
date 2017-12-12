@@ -1,35 +1,34 @@
-<div class="emp-details">                    
-    <div class="clearfix"><h6>Previous Experience</h6>
-        <form>
-            <div class="grid-x grid-margin-x">
-                <div class="cell small-4">
-                    <label for="company-name-ID">Company Name</label>
-                    <input type="text" id="company-name" name="company-name input" placeholder="Company Name">
-                </div>
-                <div class="cell small-4">
-                    <label for="start-date">Start Date</label>
-                    <input type="date" id="start-date" name="start-date input" placeholder="Start Date">
-                </div>
-                <div class="cell small-4">
-                    <label for="last-name">End Date</label>
-                    <input type="text" id="last-name" name="end input" placeholder="End Date">
-                </div>
-            </div>
-            <div class="grid-x grid-margin-x">
-                <div class="cell small-4">
-                    <div class="cell small-4">
-                        <label for="experience">Total Experience</label>
-                        <input type="text" id="experience" name="experience input" placeholder="Experience">
-                    </div>
-                </div>
-                <div class="cell small-4">
-                    <label for="skills">Skills</label>
-                    <textarea name="" id="skills" cols="20" rows="1"></textarea>						
-                </div>
-                <div class="cell small-4">
-                    <a id="add-more" class="hollow button secondary small add-experience"><i class="fa fa-plus" aria-hidden="true"></i> more experience</a>
-                </div>
-            </div>
-        </form>
-    </div>
+<div class="emp-registration">
+	<div id="step2" class="emp-details">                
+		<form id="emp-exp">
+			<div class="experience clearfix">				
+				<h6>Previous Experience <i class="fa fa-trash del-exp right" aria-hidden="true"></i></h6>    
+				<div class="grid-x grid-margin-x">
+					<div class="cell small-3">
+						<label for="company-name-ID">Company Name</label>
+						<input type="text" id="company-name" name="company-name input" placeholder="Company Name">
+					</div>
+					<div class="cell small-3">
+						<label for="experience">Total Experience</label>
+						<input type="text" id="experience" name="experience input" placeholder="Experience">
+					</div>
+					<div class="cell small-3">
+						<label for="start-date">Start Date</label>
+						<input type="date" id="start-date" name="start-date input" placeholder="Start Date">
+					</div>
+					<div class="cell small-3">
+						<label for="last-name">End Date</label>
+						<input type="date" id="last-name" name="end input" placeholder="End Date">
+					</div>
+				</div>
+				<div class="grid-x grid-margin-x">
+					<div class="cell small-12">
+						<label for="skills">Skills</label>
+						<textarea name="" id="skills" cols="20" rows="1"></textarea>						
+					</div>
+				</div>
+			</div>
+		</form>
+		<a id="add-more" class="button small add-experience"><i class="fa fa-plus" aria-hidden="true"></i> Add Experience</a>
+	</div>
 </div>

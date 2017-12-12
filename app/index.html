@@ -22,6 +22,27 @@
         padding: 5px;
       }
     </style>
+    <script src="assets/vendor/jquery/dist/jquery.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // For Add Experience
+        $(document).on('click', '#add-more', function(){
+          $(".experience:first-child").clone().appendTo("#emp-exp");
+          var totalExp = $(".experience").length;	
+          if(totalExp > 3) {
+            $("#add-more").attr("disabled","disabled").addClass("disable");
+          }
+        });
+        // For Delete Experience
+        $(document).on('click', '.del-exp', function() {
+          $(this).parents(".experience").remove();
+          var totalExp = $(".experience").length;	
+          if(totalExp <= 3) {
+            $("#add-more").removeAttr("disabled").removeClass("disable");
+          }
+        });
+      });
+    </script>
   </head>
 
   <body>

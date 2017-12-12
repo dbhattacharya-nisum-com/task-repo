@@ -39,25 +39,61 @@ header {
       }
       .user-info {
           background: #01b4e6;
+          cursor: pointer;
           height: 50px;
           line-height: normal;
           padding: 15px 10px 0 0;
+          position: relative;
           i {
               margin: 0 6px 0 0;
           }
           span {
               color: #ccff00;
-              padding: 0 0 0 5px;
               &::after {
-                content: "|";
-                display: inline-block;
+                // content: "|";
+                display: inline-block; 
                 text-align: right;
                 width: 10px;
               }
           }
-          a {
-              color: #000000;
-          }
+        &:hover {
+            .user-details {
+            max-height: 300px;
+            display: block;
+            }
+        }
+        .user-details {
+            -webkit-transition: max-height 1s; 
+            -moz-transition: max-height 1s; 
+            -ms-transition: max-height 1s; 
+            -o-transition: max-height 1s; 
+            transition: max-height 1s;  
+            background: #01b4e6;
+            overflow: hidden;
+            // "height: 0" not work with css transitions
+            max-height: 0;
+            ul {
+                margin: 0;
+                padding: 15px;
+                li {
+                    border-bottom: dotted 1px #e8e8e8;
+                    list-style: none;
+                    padding: 6px 0;
+                    a {
+                        color: #fff;
+                        display: block;
+                        font-size: 13px;
+                        &:hover {
+                            color: #ccff00;
+                        }
+                    }
+                    &:last-child {
+                        border: none;
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
       }
     .module-title {        
         background: #01b4e6;
