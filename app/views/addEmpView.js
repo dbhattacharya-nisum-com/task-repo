@@ -3,7 +3,6 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView'],function
 	    el:'#main-content',
 	    template:templates.addEmpItemView,
 	    initialize: function () {
-				console.log("initialized add employee")
 			
 	        this.render();
 	    },
@@ -11,26 +10,21 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView'],function
 	        this.$el.html(this.template);
 	    },
 	    events:{
-			"click #steptwosubmit":"addEmployee"
 			"click #steptwosubmit":"addEmployee",
 			"focusout input,select":  "contentChanged"
 		},
 		
 		contentChanged: function(e) {
-			console.log($(e.currentTarget).val());
 			if($(e.currentTarget).val()==undefined || $(e.currentTarget).val()=='')
 					$(e.currentTarget).addClass('error');
 			else
 					$(e.currentTarget).removeClass('error');		
 		},
-		addEmployee: function(e){
 
 		//Function to Save Employee Data
 		addEmployee: function(e){
 			e.preventDefault();
 			var employeeDetails={};
-			var temp = $('#empForm').serializeArray();
-			var temp2 = $('#empId').val();
 			$.map($('#empForm').serializeArray(),function(n,i){
 				employeeDetails[n['name']]=n['value'];
 			})
@@ -40,7 +34,6 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView'],function
 			if(this.model.validationError){
 					this.showErrors(this.model.validationError);
 			}else{
-						this.hideErrors(this.model.validationError);
 						this.model.save(this.model.attributes,{success:function(response){
 							this.hideErrors(this.model.validationError);
 							alert('Employee added Successfully');
@@ -49,7 +42,6 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView'],function
 							alert('Error in adding employee');
 						}
 					});
-			 
 			} 
 	
 		},
@@ -60,8 +52,7 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView'],function
 			this.$('.control-group').find('input,select').removeClass('error');
 			this.$('.help-inline').text('');
 			_.each(errors, function (value,key) {
-					var controlGroup = this.$('.' + value.name);
-					
+					var controlGroup = this.$('.' + value.name);	
 					controlGroup.find('input,select').addClass('error');
 					controlGroup.find('.help-inline').text(value.message);
 			}, this);
