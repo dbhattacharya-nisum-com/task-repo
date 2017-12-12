@@ -1,7 +1,7 @@
 define(['backbone','backbone.marionette','Templates','handlebars'],function(backbone,marionette, templates,handlebars){
 
 
-var HomeView = marionette.View.extend({
+var HomeView = marionette.ItemView.extend({
     el:'#main-content',
     template:templates.homeItemView,
     initialize: function (options) {

@@ -1,6 +1,6 @@
 define(['backbone','backbone.marionette','Templates', 'views/homeView','cryptojs'],function(backbone,marionette,templates,HomeView,CryptoJS){
 
-	var loginView = marionette.View.extend({
+	var loginView = marionette.ItemView.extend({
         el:'#main-content',
         template:templates.loginPageItemView,
         initialize: function () {

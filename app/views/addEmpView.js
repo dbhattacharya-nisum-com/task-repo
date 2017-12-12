@@ -1,13 +1,18 @@
-define(['backbone','backbone.marionette','Templates', 'views/homeView'],function(backbone,marionette,templates, HomeView){
-	var AddEmpView = marionette.View.extend({
+define(['backbone','backbone.marionette','Templates', 'views/employeeView','views/experienceView','views/addressView'],function(backbone,marionette,templates, EmployeeView,ExperienceView,AddressView){
+	
+	var AddEmpView = marionette.LayoutView.extend({
 	    el:'#main-content',
-	    template:templates.addEmpItemView,
+			template:templates.addEmpItemView,
+			regions: {
+				menu: "#step1"
+			},
 	    initialize: function () {
 			
 	        this.render();
 	    },
 	    render: function () {
-	        this.$el.html(this.template);
+					this.$el.html(this.template);
+					this.menu.show(new EmployeeView());
 	    },
 	    events:{
 			"click #steptwosubmit":"addEmployee",
@@ -24,25 +29,26 @@ define(['backbone','backbone.marionette','Templates', 'views/homeView'],function
 		//Function to Save Employee Data
 		addEmployee: function(e){
 			e.preventDefault();
-			var employeeDetails={};
-			$.map($('#empForm').serializeArray(),function(n,i){
-				employeeDetails[n['name']]=n['value'];
-			})
+			this.menu.show(new AddressView());
+			// var employeeDetails={};
+			// $.map($('#empForm').serializeArray(),function(n,i){
+			// 	employeeDetails[n['name']]=n['value'];
+			// })
 		
-			this.model.set(employeeDetails,{validate:true});
+			// this.model.set(employeeDetails,{validate:true});
 
-			if(this.model.validationError){
-					this.showErrors(this.model.validationError);
-			}else{
-						this.model.save(this.model.attributes,{success:function(response){
-							this.hideErrors(this.model.validationError);
-							alert('Employee added Successfully');
-						},error:function(err){
-							this.hideErrors(this.model.validationError);
-							alert('Error in adding employee');
-						}
-					});
-			} 
+			// if(this.model.validationError){
+			// 		this.showErrors(this.model.validationError);
+			// }else{
+			// 			this.model.save(this.model.attributes,{success:function(response){
+			// 				this.hideErrors(this.model.validationError);
+			// 				alert('Employee added Successfully');
+			// 			},error:function(err){
+			// 				this.hideErrors(this.model.validationError);
+			// 				alert('Error in adding employee');
+			// 			}
+			// 		});
+			// } 
 	
 		},
 

@@ -2,15 +2,13 @@
   "name": "nisuminit",
   "version": "1.0.0",
   "dependencies": {
-    "jquery": "latest",
-    "backbone": "latest",
-    "underscore": "latest",
+    "backbone": "1.2.3",
+    "underscore": ">=1.5.0",
     "requirejs": "latest",
-    "marionette": "latest",
-    "requirejs-text": "latest",
-    "foundation-sites": "latest",
+    "marionette": "2.4.7",
+    "foundation-sites": "^6.4.4-rc1",
     "font-awesome": "latest",
-    "handlebars": "latest",
+    "handlebars": "^4.0.5",
     "crypto-js": "^3.1.9"
   },
   "authors": [

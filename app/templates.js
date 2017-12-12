@@ -8,6 +8,9 @@ define(function (require,hbars) {
         addEmpItemView : require('hbars!templates/addEmployee'),
         editEmpItemView : require('hbars!templates/editEmployee'),
         aboutItemView:require('hbars!templates/about'),
-        sidePanelView:require('hbars!templates/sidepanel')
+        sidePanelView:require('hbars!templates/sidepanel'),
+        employeeItemView:require('hbars!templates/employee'),
+        experienceItemView:require('hbars!templates/experience'),
+        addressItemView: require('hbars!templates/address')
     };
 });
