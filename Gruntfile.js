@@ -114,6 +114,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-auto-install');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
   // Task definition
-  grunt.registerTask('default', ['auto_install','handlebars']);
+  grunt.registerTask('default', ['sass','auto_install','handlebars']);
   grunt.task.run('default');
 };
