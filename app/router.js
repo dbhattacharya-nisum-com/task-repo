@@ -1,4 +1,5 @@
-define(['backbone', 'backbone.marionette','views/loginView','views/homeView', 'views/navbarView','views/addEmpView','views/aboutView','views/sidePanelView','collections/employeeListCollection', 'models/employeeModel'], function(Backbone,Marionette,LoginView,HomeView,NavbarView, AddEmpView,AboutView,SidePanelView,EmployeeList, employeeModel) {  
+define(['backbone', 'backbone.marionette','views/loginView','views/homeView', 'views/navbarView','views/addEmpView','views/aboutView','views/sidePanelView','collections/employeeListCollection', 'models/employeeModel', 'models/loginModel'], function(Backbone,Marionette,LoginView,HomeView,NavbarView, AddEmpView,AboutView,SidePanelView,EmployeeList, employeeModel, LoginModel) {
+
 var Router =Marionette.AppRouter.extend({
    navbarView :null,
    sidePanelView: null,
@@ -6,8 +7,7 @@ var Router =Marionette.AppRouter.extend({
         '': 'loginRoute',
         'home': 'homeRoute',
         'about': 'aboutRoute', 
-        'addEmp': 'addEmpRoute',
-        'loginHandler:code': 'loginHandler'
+        'addEmp': 'addEmpRoute'
     },
     initialize : function(Router){
     },
@@ -17,11 +17,8 @@ var Router =Marionette.AppRouter.extend({
             this.navbarView.$el.hide();
             this.sidePanelView.$el.hide();
         }
-        var loginView = new LoginView(); 
-       
-    },
-    loginHandler: function (code) {
-
+        let loginModel = new LoginModel();
+        let loginView = new LoginView({model: loginModel});
     },
     homeRoute: function () {
         this.checkNavBar();

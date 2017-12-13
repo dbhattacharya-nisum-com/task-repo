@@ -1,5 +1,6 @@
 .grunt
 app/assets/vendor/
+app/assets/css/
 node_modules
 bower_components
 dist
