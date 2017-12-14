@@ -1,31 +1,35 @@
                 
-		<form id="emp-exp">
+		<form id="expForm">
 			<div class="experience clearfix">				
 				<h6>Previous Experience <i class="fa fa-trash del-exp right" aria-hidden="true"></i></h6>    
 				<div class="grid-x grid-margin-x">
-					<div class="cell small-3">
+					<div class="cell small-3 control-group companyName">
 						<label for="company-name-ID">Company Name</label>
-						<input type="text" id="company-name" name="company-name input" placeholder="Company Name">
+						<input type="text" id="companyName" name="companyName" placeholder="Company Name">
 					</div>
-					<div class="cell small-3">
+					<div class="cell small-3 control-group experience">
 						<label for="experience">Total Experience</label>
-						<input type="text" id="experience" name="experience input" placeholder="Experience">
+						<input type="text" id="experience" name="experience" placeholder="Experience">
 					</div>
-					<div class="cell small-3">
+					<div class="cell small-3 control-group startDate">
 						<label for="start-date">Start Date</label>
-						<input type="date" id="start-date" name="start-date input" placeholder="Start Date">
+						<input type="date" id="startDate" name="startDate" placeholder="Start Date">
 					</div>
-					<div class="cell small-3">
+					<div class="cell small-3 control-group endDate">
 						<label for="last-name">End Date</label>
-						<input type="date" id="last-name" name="end input" placeholder="End Date">
+						<input type="date" id="endDate" name="endDate" placeholder="End Date">
 					</div>
 				</div>
 				<div class="grid-x grid-margin-x">
-					<div class="cell small-12">
+					<div class="cell small-12 control-group skills">
 						<label for="skills">Skills</label>
-						<textarea name="" id="skills" cols="20" rows="1"></textarea>						
+						<textarea name="skills" id="skills" cols="20" rows="1"></textarea>						
 					</div>
 				</div>
+			</div>
+			 <div class="nav clearfix text-center"><br />
+					<button type="button" class="prev button small" id="prev">Previous</button>
+					<button type="button" class="next button small" id="submitExperience">Save & Next</button>
 			</div>
 		</form>
 		<a id="add-more" class="button small add-experience"><i class="fa fa-plus" aria-hidden="true"></i> Add Experience</a>

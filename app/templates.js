@@ -12,6 +12,7 @@ define(function (require,hbars) {
         employeeItemView:require('hbars!templates/employee'),
         experienceItemView:require('hbars!templates/experience'),
         addressItemView: require('hbars!templates/address'),
-        myProfileEditView: require('hbars!templates/myProfile')
+        myProfileEditView: require('hbars!templates/myProfile'),
+        salaryBreakUpsView: require('hbars!templates/salaryBreakUp')
     };
 });

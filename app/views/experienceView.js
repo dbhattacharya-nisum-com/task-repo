@@ -5,6 +5,9 @@ define(['backbone','backbone.marionette','Templates'],function(backbone,marionet
         intialize:function(){
 
         },
+        triggers : {
+            'click #submitExperience':'ExperienceView:submitExperience'
+        }
     })
         return ExperienceView;
 })   

@@ -2,9 +2,15 @@ define(['backbone','backbone.marionette','Templates'],function(backbone,marionet
 	
 	var AddressView = marionette.ItemView.extend({
         template:templates.addressItemView,
-        intialize:function(){
-
+        initialize:function(options){
         },
+        
+        validations: function(){
+            console.log('helo'+ this.validationErrors);
+        },
+        triggers : {
+            'click #submitAddressNext':'AddressView:submitAdd'
+        }
     })
         return AddressView;
 })   
