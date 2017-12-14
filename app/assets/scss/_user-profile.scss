@@ -1,11 +1,27 @@
 .user-profile {
     border: 1px solid #ccc;
     border-top-right-radius: 50px;
-    border-top-right-radius: 50px;
-    margin: 15px auto;
-    width: 85%;
-    .user {
+    border-bottom-left-radius: 50px;
+    margin: 20px auto;
+    width: 90%;
+    .profile-icon {
         color: #ccc;
         font-size: 100px;
+    }
+    .profile {
+        padding: 20px;
+        label::after {
+            content: ":";
+            display: inline-block;
+            float: right;
+        }
+        button {
+            margin: 30px 0 0 0;
+        }
+        .details {
+            border-top: 1px dotted #ccc;
+            margin: 20px 0 0 0;
+            padding: 10px 0 0 0;
+        }
     }
 }
