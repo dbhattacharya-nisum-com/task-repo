@@ -3,12 +3,13 @@
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
     margin: 20px auto;
-    width: 90%;
+    min-height: 350px;
+    width: 90%; 
     .profile-icon {
         color: #ccc;
         font-size: 100px;
     }
-    .profile {
+    .profile, .profileDetails {
         padding: 20px;
         label::after {
             content: ":";
@@ -20,8 +21,8 @@
         }
         .details {
             border-top: 1px dotted #ccc;
-            margin: 20px 0 0 0;
-            padding: 10px 0 0 0;
+            margin: 15px 0 0 0;
+            padding: 15px 0 0 0;
         }
     }
 }

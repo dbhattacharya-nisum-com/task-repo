@@ -1,0 +1,24 @@
+{
+  "myProfile": [
+    {
+      "name": "Vanava Raju Adabala",
+      "eid": "16437",
+      "designation": "Principle UI Engineer",
+      "experience": "8 + Years",
+      "email": "vadabala@nisum.com",
+      "doj": "2017-11-23",
+      "dob": "2017-11-06",
+      "id": 1
+    },
+    {
+      "name": "Sandeep",
+      "eid": "16392",
+      "designation": "UI Developer",
+      "experience": "3 Years",
+      "email": "sandeep@nisum.com",
+      "doj": "2017-11-06",
+      "dob": "2017-11-06",
+      "id": 2
+    }
+  ]
+}

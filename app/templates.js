@@ -11,6 +11,7 @@ define(function (require,hbars) {
         sidePanelView:require('hbars!templates/sidepanel'),
         employeeItemView:require('hbars!templates/employee'),
         experienceItemView:require('hbars!templates/experience'),
-        addressItemView: require('hbars!templates/address')
+        addressItemView: require('hbars!templates/address'),
+        myProfileEditView: require('hbars!templates/myProfile')
     };
 });

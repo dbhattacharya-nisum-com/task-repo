@@ -1,4 +1,4 @@
-define(['backbone', 'backbone.marionette','views/loginView','views/homeView', 'views/navbarView','views/addEmpView','views/aboutView','views/sidePanelView','collections/employeeListCollection', 'models/employeeModel', 'models/loginModel'], function(Backbone,Marionette,LoginView,HomeView,NavbarView, AddEmpView,AboutView,SidePanelView,EmployeeList, employeeModel, LoginModel) {
+define(['backbone', 'backbone.marionette','views/loginView','views/homeView', 'views/navbarView','views/addEmpView','views/aboutView','views/sidePanelView','views/myProfileView','collections/employeeListCollection','collections/myProfileCollection', 'models/employeeModel', 'models/loginModel','models/myProfileModel'], function(Backbone,Marionette,LoginView,HomeView,NavbarView, AddEmpView,AboutView,SidePanelView,myProfileView,EmployeeList,myProfileCollection, employeeModel, LoginModel,myProfileModel) {
 
 var Router =Marionette.AppRouter.extend({
    navbarView :null,
@@ -7,7 +7,8 @@ var Router =Marionette.AppRouter.extend({
         '': 'loginRoute',
         'home': 'homeRoute',
         'about': 'aboutRoute', 
-        'addEmp': 'addEmpRoute'
+        'addEmp': 'addEmpRoute',
+        'myProfile': "myProfileRoute"
     },
     initialize : function(Router){
     },
@@ -35,6 +36,10 @@ var Router =Marionette.AppRouter.extend({
         var empModel = new employeeModel();
         var addEmpView = new AddEmpView({model:empModel});
         addEmpView.progressTab();
+    },
+    myProfileRoute: function() {
+        this.checkNavBar();
+        var profileView = new myProfileView();
     },
     checkNavBar:function(){
         if(this.navbarView==null || this.sidePanelView==null){
