@@ -11,8 +11,9 @@ define(['backbone','backbone.marionette','Templates', 'views/employeeView','view
 	        this.render();
 	    },
 	    render: function () {
-					this.$el.html(this.template);
-					this.menu.show(new EmployeeView());
+
+					this.$el.html(this.template(this.model.attributes));
+	       // this.$el.html(this.template);
 	    },
 	    events:{
 			"click #steptwosubmit":"addEmployee",

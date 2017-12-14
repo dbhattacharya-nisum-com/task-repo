@@ -13,7 +13,117 @@
 
 	<div class="emp-details">
 		<div id="step1">
-			
+
+			<form id="empForm">
+				<div class="clearfix"><small class="right required">mandatory fields.</small></div>
+				<div class="grid-x grid-margin-x">
+					<div class="cell small-4  control-group empId">
+						<label for="Employee-ID" class="mandatory">Employee ID</label>
+						<input type="number" maxlength="10" id="empId" name="empId" placeholder="Enter 6 digit ID" value="{{id}}">
+					</div>
+					<div class="cell small-4 control-group firstName">
+						<label for="first-name" class="mandatory">First name</label>
+						<input type="text" id="firstName" name="firstName" placeholder="First name" value="{{firstName}}">
+					</div>
+					<div class="cell small-4 control-group lastName">
+						<label for="last-name" class="mandatory">Last name</label>
+						<input type="text" id="lastName" name="lastName" placeholder="Last name" value="{{lastName}}">
+					</div>
+				</div>
+				
+
+				<div class="grid-x grid-margin-x">
+					<div class="cell small-4 control-group ">
+						<div class="grid-x grid-margin-x">
+							<div class="cell small-4 control-group gender">
+									<label>Gender</label>
+									<select name="gender" id="gender">
+										<option value="" >Select</option>
+										<option value="Male" >Male</option>
+										<option value="Female" >Female</option>
+									</select>
+								</div>
+								<div class="cell small-4 control-group maritalStatus">
+									<label for="Marital Status">MaritalStatus</label>
+									<select name="maritalStatus" id="maritalStatus">
+										<option value="">Select</option>
+										<option value="Married">Married</option>
+										<option value="Un Married">Un Married</option>
+										<option value="Single">Single</option>
+									</select>
+								</div>
+								<div class="cell small-4 control-group bloodGroup">
+									<label for="bloodGroup">Blood-Group</label>
+									<select name="bloodGroup" id="bloodGroup">
+										<option value="">Select</option>
+										<option value="A+ve">A+ve</option>
+										<option value="A-ve">A-ve</option>
+										<option value="B+ve">B+ve</option>
+										<option value="B-ve">B-ve</option>
+										<option value="AB+ve">AB+ve</option>
+										<option value="AB-ve">A-ve</option>
+										<option value="O+ve">O+ve</option>
+										<option value="O-ve">O-ve</option>
+									</select>
+								</div>
+						</div>
+					</div>
+					<div class="cell small-4 control-group designation">
+						<label for="Date-Of-Joining">Designation</label>
+						<input type="text" id="designation" name="designation" placeholder="Designation" value="{{designation}}">
+					</div>
+					<div class="cell small-4 control-group location" >
+						<label for="location">Location</label>
+						<input type="text" id="location" name="location" placeholder="Location" value="{{location}}">						
+					</div>
+				</div>
+				<div class="grid-x grid-margin-x">
+					<div class="cell small-4 control-group dob">
+						<label for="D.O.B">D.O.B</label>
+						<input type="datetime-local" id="dob" name="dob" placeholder="D.O.B" value="{{dateOfBirth}}">
+					</div>
+					<div class="cell small-4 control-group dateOfJoining">                        
+						<label for="dateOfJoining">Date-Of-Joining</label>
+						<input type="date" id="dateOfJoining" name="dateOfJoining" placeholder="Date-Of-Joining" >
+					</div>
+					<div class="cell small-4 control-group dateOfReleiving">
+						<label for="Date-Of-Relieving">Date-Of-Relieving</label>
+						<input type="date" id="dateOfReleiving" name="dateOfReleiving" placeholder="Date-Of-Relieving" >
+					</div>
+				</div>
+				<div class="grid-x grid-margin-x">
+					<div class="cell small-4 control-group email">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" placeholder="Enter Valid Email" value="{{emailId}}">
+					</div>
+					<div class="cell small-4 control-group panCard">
+						<label for="PAN-CARD">Pan-Card</label>
+						<input type="text" id="panCard" name="panCard" placeholder="Pan-Card" value="{{panCardNo}}">
+					</div>
+					<div class="cell small-4 control-group aadharCard">
+						<label for="Aadhar-Card-Number">Aadhar-Card-Number</label>
+						<input type="text" id="aadharCard" name="aadharCard" placeholder="Enter 12 Digit Number" value="{{aadharCardNo}}">
+					</div>
+				</div>
+				<div class="grid-x grid-margin-x">
+					<div class="cell small-4 control-group passportNo">
+						<label for="Pass-Port-Number">Pass-Port-Number</label>
+						<input type="text" id="passportNo" name="passportNo" placeholder="Pass-Port-Number" value="{{passPortNo}}">
+					</div>
+					<div class="cell small-4 control-group passportIssueDate">
+						<label for="PassPort-IssueDate">PassPort-IssueDate</label>
+						<input type="date" id="passportIssueDate" name="passportIssueDate" placeholder="PassPort-IssueDate">
+					</div>
+					<div class="cell small-4 control-group passportExpDate">
+						<label for="passport-ExpiryDate">PassPort-ExpiryDate</label>
+						<input type="date" id="passportExpDate" name="passportExpDate" placeholder="PassPort-ExpiryDate" >
+					</div>
+				</div>
+				<div class="nav clearfix text-center"><br />
+					<button type="button" class="prev button small" id="" onclick="return handleChange()">Previous</button>
+					<button type="button" class="next button small" id="steptwosubmit" onclick="return handleChange()">Save & Next</button>
+				</div>
+			</form>
 		</div>
 				
 		</div>

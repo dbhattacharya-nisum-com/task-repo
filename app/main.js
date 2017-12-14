@@ -10,7 +10,8 @@ require.config({
     'text': 'assets/vendor/requirejs-text/text',
     'handlebars':'assets/vendor/handlebars/handlebars',
     'hbars':'hbars',
-    'cryptojs': 'assets/vendor/crypto-js/crypto-js'
+    'cryptojs': 'assets/vendor/crypto-js/crypto-js',
+    'backbonePageable':'assets/backgrid/js/backbone-pageable'
   },
   shim: {
     underscore: {
