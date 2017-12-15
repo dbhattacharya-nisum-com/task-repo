@@ -10,7 +10,7 @@ define(['backbone','backbone.marionette','Templates','handlebars','collections/e
 			   render: function() {
 				var self=this;
 				//this.$el.html(pageableGrid.render().el);
-				
+				this.collection.fetch({reset: true})
 				// Set up a grid to use the pageable collection
 				var pageableGrid = new Backgrid.Grid({
 					columns: columns,
@@ -22,7 +22,7 @@ define(['backbone','backbone.marionette','Templates','handlebars','collections/e
 				fields: ['firstName', 'id']
 				});
 				$(filter.el).css({float: "right", margin: "20px"});			
-				this.collection.fetch({reset: true})
+				
 				
 				var paginator = new Backgrid.Extension.Paginator({
 				collection: this.collection
