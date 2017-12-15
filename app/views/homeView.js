@@ -5,12 +5,14 @@ define(['backbone','backbone.marionette','Templates','handlebars','collections/e
 			template:templates.homeItemView,
 			initialize: function(options) {
 				this.collection = options.collection;
+				console.log(this.collection);
 				this.render();
 			   },
 			   render: function() {
 				var self=this;
 				//this.$el.html(pageableGrid.render().el);
-				this.collection.fetch({reset: true})
+				this.collection.fetch({reset: true});
+
 				// Set up a grid to use the pageable collection
 				var pageableGrid = new Backgrid.Grid({
 					columns: columns,

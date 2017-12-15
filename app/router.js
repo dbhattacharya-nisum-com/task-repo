@@ -34,7 +34,7 @@ var Router =Marionette.AppRouter.extend({
     	this.checkNavBar();
         var empModel = new employeeModel();
         var addEmpView = new AddEmpView({model:empModel});
-        addEmpView.progressTab();
+        //addEmpView.progressTab();
     },
     myProfileRoute: function() {
         this.checkNavBar();

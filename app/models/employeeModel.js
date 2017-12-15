@@ -1,6 +1,6 @@
 define(['backbone'],function(backbone){
     var EmployeeModel= Backbone.Model.extend({
-        urlRoot:"http://localhost:3000/employees",
+        urlRoot:"http://localhost:3000/Employees",
             defaults:{
                 empId: '',
 				firstName:  '',

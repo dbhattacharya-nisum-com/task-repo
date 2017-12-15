@@ -980,6 +980,26 @@
       "aadharCard": "fasf",
       "panCard": "fsasf",
       "id": 45
+    },
+    {
+      "empId": "164161",
+      "firstName": "Trilok",
+      "lastName": "Vallamkonda",
+      "email": "trilok4a7@gmail.com",
+      "gender": "Male",
+      "dob": "2017-12-15T11:11",
+      "maritalStatus": "Single",
+      "bloodGroup": "A-ve",
+      "dateOfJoining": "2017-12-05",
+      "dateOfReleiving": "2017-12-19",
+      "designation": "UI",
+      "location": "Hyderabad",
+      "passportNo": "asdf",
+      "passportIssueDate": "2017-12-11",
+      "passportExpDate": "2017-12-19",
+      "aadharCard": "asdf",
+      "panCard": "asdfas",
+      "id": 46
     }
   ]
 }

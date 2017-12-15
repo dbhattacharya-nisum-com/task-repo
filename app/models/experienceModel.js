@@ -1,6 +1,6 @@
 define(['backbone'],function(backbone){
     var ExperienceModel= Backbone.Model.extend({
-        urlRoot:"http://localhost:3000/experience",
+        urlRoot:"http://localhost:3000/Experience",
         defaults:{
             companyName:"",
             experience:"",

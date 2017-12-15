@@ -1,6 +1,6 @@
 define(['backbone'],function(backbone){
     var SalaryBreakUpModel= Backbone.Model.extend({
-        urlRoot:"http://localhost:3000/salary",
+        urlRoot:"http://localhost:3000/Salary",
         defaults:{
             baseSalary:"",
             hra:"",
