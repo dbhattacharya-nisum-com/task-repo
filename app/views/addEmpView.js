@@ -71,7 +71,7 @@ define(['backbone','backbone.marionette','Templates', 'views/employeeView','view
 			if(this.model.validationError){
 					this.showErrors(this.model.validationError);
 			}else{
-						this.model.save(this.model.attributes,{success:function(response){
+						this.model.save(this.model.attributes,{wait:true,success:function(response){
 							localStorage.setItem("empDetails", JSON.stringify(employeeDetails));
 							self.hideErrors(self.model.validationError);
 							var addressModel = new AddressModel();
