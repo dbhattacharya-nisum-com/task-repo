@@ -232,5 +232,17 @@
                 margin: 0 5px 0 0;
             }
         }
+        .backgrid-filter.backgrid-filter {
+            margin: 0 !important;
+            .search {
+                display: none;
+            }
+            // input[type="search"] {
+            //     @extend .fa;
+            //     @extend .fa-search;
+            //     // content: "<i class="fa fa-search" aria-hidden="true"></i>"
+            // }
+        }
+
     }
 }
