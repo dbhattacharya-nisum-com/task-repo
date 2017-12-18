@@ -10,69 +10,15 @@
     <link rel="stylesheet" media="screen" href="assets/vendor/font-awesome/css/font-awesome.min.css" type="text/css"/>
     <link rel="stylesheet" media="screen" href="assets/css/style.css" type="text/css"/>
     <link rel="stylesheet" href='assets/css/app.css'/>
-    <script src="scripts/api_client.js"></script>
-    <style>
-      html body {
-        background: #f1f1f1;
-        font-family: 'Open Sans', sans-serif;
-      }
-      #showHere {
-        border: 1px solid rgb(119, 175, 238);
-        margin-top: 10px;
-        padding: 5px;
-      }
-    </style>
-    <script src="assets/vendor/jquery/dist/jquery.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        // For Add Experience
-        $(document).on('click', '#add-more', function(){
-          $(".experience:first-child").clone().appendTo("#emp-exp");
-          var totalExp = $(".experience").length;	
-          if(totalExp > 3) {
-            $("#add-more").attr("disabled","disabled").addClass("disable");
-          }
-        });
-        // For Delete Experience
-        $(document).on('click', '.del-exp', function() {
-          $(this).parents(".experience").remove();
-          var totalExp = $(".experience").length;	
-          if(totalExp <= 3) {
-            $("#add-more").removeAttr("disabled").removeClass("disable");
-          }
-        });
-      });
-    </script>
-    <!-- backgrid --> 
-    <!-- <link rel="stylesheet" href="assets/backgrid/css/backgrid-0.3.5.css">
-    <link rel="stylesheet" href="assets/backgrid/css/backgrid-select-all.css"> -->
-    <link rel="stylesheet" href="assets/backgrid/css/backgrid-paginator.css">
-    <!-- <link rel="stylesheet" href="assets/backgrid/css/backgrid-filter.css"> -->
-    <!-- <script src="assets/backgrid/js/jquery-1.11.0.js"></script> -->
-    <script src="assets/backgrid/js/underscore-1.6.0.js"></script>
-    <script src="assets/backgrid/js/backbone-1.1.2.js"></script>
-   
-    <script src="assets/backgrid/js/backbone-pageable.js"></script>
-
-
-    <script src="assets/backgrid/js/backgrid-0.3.5.js"></script>
-
-    <script src="assets/backgrid/js/backgrid-select-all.js"></script>
-    <script src="assets/backgrid/js/backgrid-paginator.js"></script>
-    <script src="assets/backgrid/js/backgrid-filter.js"></script>
-    <!-- backgrid --> 
   </head>
 
   <body>
     <div id="mainApp">  
-    <div id="navbar"></div>
-    <div class="main-wrapper">
-      <div id="sidepanel"></div>
-      <div class="content-area">
-        <div id="main-content">      </div>
-      </div>
+    
+      <h1>Welcome</h1>
+
     </div> 
-    </div>  
+ 
     <script data-main="main.js" src="assets/vendor/requirejs/require.js"></script>
   </body>
 </html>

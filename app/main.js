@@ -8,10 +8,7 @@ require.config({
     'backbone.wreqr': 'assets/vendor/backbone.wreqr/lib/backbone.wreqr',
     'backbone.marionette': 'assets/vendor/marionette/lib/backbone.marionette',
     'text': 'assets/vendor/requirejs-text/text',
-    'handlebars':'assets/vendor/handlebars/handlebars',
-    'hbars':'hbars',
-    'cryptojs': 'assets/vendor/crypto-js/crypto-js',
-    'backbonePageable':'assets/backgrid/js/backbone-pageable'
+    'handlebars':'assets/vendor/handlebars/handlebars'
   },
   shim: {
     underscore: {

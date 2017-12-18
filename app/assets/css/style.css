@@ -7,7 +7,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 /**
  * Foundation for Sites by ZURB
- * Version 6.4.3
+ * Version 6.4.4-rc1
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
@@ -1968,6 +1968,7 @@ textarea {
 }
 .grid-y > .cell {
   width: auto;
+  max-width: none;
 }
 .grid-y > .auto {
   height: auto;
@@ -2353,6 +2354,7 @@ textarea {
 .cell-block-y {
   overflow-y: auto;
   max-height: 100%;
+  height: 100%;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-stype: -ms-autohiding-scrollbar;
 }
@@ -2400,6 +2402,7 @@ textarea {
   .medium-cell-block-y {
     overflow-y: auto;
     max-height: 100%;
+    height: 100%;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-stype: -ms-autohiding-scrollbar;
   }
@@ -2437,6 +2440,7 @@ textarea {
   .large-cell-block-y {
     overflow-y: auto;
     max-height: 100%;
+    height: 100%;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-stype: -ms-autohiding-scrollbar;
   }
@@ -3267,7 +3271,6 @@ label.middle {
 .input-group-field {
   border-radius: 0;
   flex: 1 1 0px;
-  height: auto;
   min-width: 0;
 }
 
@@ -5603,16 +5606,13 @@ a.button:hover, a.button:focus {
   bottom: 0;
 }
 
-body.is-reveal-open {
-  overflow: hidden;
-}
-
-html.is-reveal-open,
-html.is-reveal-open body {
-  min-height: 100%;
-  overflow: hidden;
+html.is-reveal-open {
   position: fixed;
-  user-select: none;
+  width: 100%;
+  overflow-y: scroll;
+}
+html.is-reveal-open body {
+  overflow: hidden;
 }
 
 .reveal-overlay {
@@ -6396,6 +6396,10 @@ a.thumbnail image {
   clear: both;
 }
 
+.align-left {
+  justify-content: flex-start;
+}
+
 .align-right {
   justify-content: flex-end;
 }
@@ -6410,6 +6414,10 @@ a.thumbnail image {
 
 .align-spaced {
   justify-content: space-around;
+}
+
+.align-left.vertical.menu > li > a {
+  justify-content: flex-start;
 }
 
 .align-right.vertical.menu > li > a {
@@ -6718,25 +6726,57 @@ header nav .menu .active > a {
 }
 header .user-info {
   background: #01b4e6;
+  cursor: pointer;
   height: 50px;
   line-height: normal;
   padding: 15px 10px 0 0;
+  position: relative;
 }
 header .user-info i {
   margin: 0 6px 0 0;
 }
 header .user-info span {
   color: #ccff00;
-  padding: 0 0 0 5px;
 }
 header .user-info span::after {
-  content: "|";
   display: inline-block;
   text-align: right;
   width: 10px;
 }
-header .user-info a {
-  color: #000000;
+header .user-info:hover .user-details {
+  max-height: 300px;
+  display: block;
+}
+header .user-info .user-details {
+  -webkit-transition: max-height 1s;
+  -moz-transition: max-height 1s;
+  -ms-transition: max-height 1s;
+  -o-transition: max-height 1s;
+  transition: max-height 1s;
+  background: #01b4e6;
+  overflow: hidden;
+  max-height: 0;
+}
+header .user-info .user-details ul {
+  margin: 0;
+  padding: 15px;
+}
+header .user-info .user-details ul li {
+  border-bottom: dotted 1px #e8e8e8;
+  list-style: none;
+  padding: 6px 0;
+}
+header .user-info .user-details ul li a {
+  color: #fff;
+  display: block;
+  font-size: 13px;
+}
+header .user-info .user-details ul li a:hover {
+  color: #ccff00;
+}
+header .user-info .user-details ul li:last-child {
+  border: none;
+  padding-bottom: 0;
 }
 header .module-title {
   background: #01b4e6;
@@ -6745,6 +6785,35 @@ header .module-title {
   font-weight: 600;
   padding: 10px 0 0 0;
   text-align: center;
+}
+
+.user-profile {
+  border: 1px solid #ccc;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  margin: 20px auto;
+  min-height: 350px;
+  width: 90%;
+}
+.user-profile .profile-icon {
+  color: #ccc;
+  font-size: 100px;
+}
+.user-profile .profile, .user-profile .profileDetails {
+  padding: 20px;
+}
+.user-profile .profile label::after, .user-profile .profileDetails label::after {
+  content: ":";
+  display: inline-block;
+  float: right;
+}
+.user-profile .profile button, .user-profile .profileDetails button {
+  margin: 30px 0 0 0;
+}
+.user-profile .profile .details, .user-profile .profileDetails .details {
+  border-top: 1px dotted #ccc;
+  margin: 15px 0 0 0;
+  padding: 15px 0 0 0;
 }
 
 .main-wrapper {
@@ -6911,11 +6980,47 @@ header .module-title {
 }
 .main-wrapper .content-area .emp-registration {
   margin: 0 auto;
-  width: 85%;
+  width: 95%;
+}
+.main-wrapper .content-area .emp-registration .emp-details .experience h6 {
+  background: #e8e8e8;
+  padding: 6px;
+}
+.main-wrapper .content-area .emp-registration .emp-details .experience:nth-child(1) h6 {
+  background: none;
+}
+.main-wrapper .content-area .emp-registration .emp-details .experience:nth-child(1) h6 i {
+  display: none;
+}
+.main-wrapper .content-area .emp-registration .emp-details .experience .del-exp {
+  cursor: pointer;
+  margin-top: 2px;
+}
+.main-wrapper .content-area .emp-registration .emp-details .add-experience {
+  display: inline-block;
+  margin: 10px 0 0 0;
+}
+.main-wrapper .content-area .emp-registration .emp-details .add-experience.disable {
+  pointer-events: none;
+}
+.main-wrapper .content-area .emp-registration .emp-details form label.mandatory::after {
+  content: "*";
+  color: red;
+  font-size: 12px;
+  margin: 0 0 0 3px;
+}
+.main-wrapper .content-area .emp-registration .emp-details form label.mandatory.error {
+  border: none;
+  color: red;
+}
+.main-wrapper .content-area .emp-registration .emp-details form .required::before {
+  content: "*";
+  color: red;
+  font-size: 12px;
+  margin: 0 3px 0 0;
 }
 .main-wrapper .content-area .add-employee, .main-wrapper .content-area .back {
   background: #e5e5e5;
-  border: 1px solid #ccc;
   border-radius: 3px;
   color: #000;
   font-size: 12px;
@@ -6924,6 +7029,12 @@ header .module-title {
 }
 .main-wrapper .content-area .add-employee i, .main-wrapper .content-area .back i {
   margin: 0 5px 0 0;
+}
+.main-wrapper .content-area .backgrid-filter.backgrid-filter {
+  margin: 0 !important;
+}
+.main-wrapper .content-area .backgrid-filter.backgrid-filter .search {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

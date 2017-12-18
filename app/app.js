@@ -1,4 +1,4 @@
-define(['backbone.marionette','views/loginView'], function(marionette,loginView) {  
+define(['backbone.marionette'], function(marionette) {  
   var app =marionette.Application.extend({
       onStart() {
       }
